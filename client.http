@@ -12,8 +12,8 @@ content-type: application/json
 
 ###
 
-# @name authenticate
-POST {{baseUrl}}/authenticate
+# @name sessions
+POST {{baseUrl}}/sessions
 content-type: application/json
 
 {
