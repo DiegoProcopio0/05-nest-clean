@@ -42,7 +42,7 @@ export class AuthenticateController {
       throw new UnauthorizedException('User credentials do not match.')
     }
 
-    const isPasswordValid = await compare(password, user.email)
+    const isPasswordValid = await compare(password, user.passsword)
 
     if (!isPasswordValid) {
       throw new UnauthorizedException('User credentials do not match.')

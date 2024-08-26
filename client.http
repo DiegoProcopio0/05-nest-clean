@@ -1,4 +1,5 @@
 @baseUrl = http://localhost:3333
+@authToken = eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJiODUzNWQyMi0yMjc2LTRmMDctODc1OC01ZWIxOGRkYTZmMTEiLCJpYXQiOjE3MjQ2OTEwOTZ9.bGmUbDl-KNMH8Y26reH6UD2eZzX23bHD5yLRsGZGFa4mhnQtq0aCKSA7Mc6aiFWqOXJiqraBrs8ikp-kDLgEJP2Ac6G6ZGmOc5W-G9z-2mkvF1pu4VoQkUdtgsrqNzAM-qCoXgpQjYRzTLCWmahGsrxAJW0f3da7IjyZE_fBWRhwn1JdspnR_pm-CfNAt0VnY7lVRdVRuk-GwZTS5Dv3WmYnrI4F64o55CCZgWF_vI893D5AFRs8zFBhTIp9Z6r3SvVIJ8LUQTor_xo4Jk9qkOqf-yyojtpDyoS5cr4YBhX9LCd0jUuu8RFp2ByW-0Z3zvSzpmxLm6SWDWyqjxXd7A
 
 # @name create_account
 POST {{baseUrl}}/accounts
@@ -6,7 +7,7 @@ content-type: application/json
 
 {
   "name": "Diego",
-  "email": "testemail.com",
+  "email": "teste2@email.com",
   "password": "123456"
 }
 
@@ -17,7 +18,7 @@ POST {{baseUrl}}/sessions
 content-type: application/json
 
 {
-  "email": "testemail.com",
+  "email": "teste2@email.com",
   "password": "123456"
 }
 
@@ -25,9 +26,10 @@ content-type: application/json
 
 # @name create_question
 POST {{baseUrl}}/questions
-# content-type: application/json
+content-type: application/json
+Authorization: Bearer {{authToken}} 
 
-# {
-#   "email": "testemail.com",
-#   "password": "123456"
-# }
+{
+  "title": "Nova Pergunta",
+  "content": "conteudo da pergunta"
+}
